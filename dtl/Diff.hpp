@@ -560,7 +560,7 @@ namespace dtl {
             huge             = false;
             trivial          = false;
             editDistanceOnly = false;
-            fp               = NULL;
+            fp               = nullptr;
             ox               = 0;
             oy               = 0;
         }

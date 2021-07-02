@@ -57,7 +57,7 @@ namespace dtl {
         Ses (bool moveDel) : onlyAdd(true), onlyDelete(true), onlyCopy(true), deletesFirst(moveDel) {
             nextDeleteIdx = 0;
         }
-        ~Ses () {}
+        ~Ses () = default;
         
         bool isOnlyAdd () const {
             return onlyAdd;

@@ -49,7 +49,8 @@ namespace dtl {
     public :
         Printer ()            : out_(cout) {}
         Printer (stream& out) : out_(out)  {}
-        virtual ~Printer () {}
+        Printer(const Printer &) = default;
+        virtual ~Printer () = default;
         virtual void operator() (const sesElem& se) const = 0;
     protected :
         stream& out_;
@@ -64,8 +65,8 @@ namespace dtl {
     public :
         CommonPrinter  ()            : Printer < sesElem, stream > ()    {}
         CommonPrinter  (stream& out) : Printer < sesElem, stream > (out) {}
-        ~CommonPrinter () {}
-        void operator() (const sesElem& se) const {
+        ~CommonPrinter () = default;
+        void operator() (const sesElem& se) const override {
             this->out_ << SES_MARK_COMMON << se.first << endl;    
         }
     };
@@ -79,8 +80,8 @@ namespace dtl {
     public :
         ChangePrinter  ()            : Printer < sesElem, stream > ()    {}
         ChangePrinter  (stream& out) : Printer < sesElem, stream > (out) {}
-        ~ChangePrinter () {}
-        void operator() (const sesElem& se) const {
+        ~ChangePrinter () = default;
+        void operator() (const sesElem& se) const override {
             switch (se.second.type) {
             case SES_ADD:
                 this->out_ << SES_MARK_ADD    << se.first << endl;
@@ -104,7 +105,7 @@ namespace dtl {
     public :
         UniHunkPrinter  ()            : out_(cout) {}
         UniHunkPrinter  (stream& out) : out_(out)  {}
-        ~UniHunkPrinter () {}
+        ~UniHunkPrinter () = default;
         void operator() (const uniHunk< sesElem >& hunk) const {
             out_ << "@@"
                  << " -"  << hunk.a << "," << hunk.b

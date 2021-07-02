@@ -3,7 +3,7 @@
 
 #include <dtl/dtl.hpp>
 
-template <typename sesElem, typename stream = ostream >
+template <typename sesElem, typename stream = std::ostream >
 class customChangePrinter : public dtl::Printer < sesElem, stream >
 {
 public :

@@ -1,9 +1,9 @@
 
 #include "common.hpp"
 
-bool isFileExist (string& fs) {
+bool isFileExist (const std::string& fs) {
     FILE *fp;
-    if ((fp = fopen(fs.c_str(), "r")) == NULL) {
+    if ((fp = fopen(fs.c_str(), "r")) == nullptr) {
         return false;
     }
     fclose(fp);
