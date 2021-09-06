@@ -9,7 +9,7 @@ def path_chomp(path):
     return path
 
 env  = Environment(
-    CPPFLAGS=['-Wall', '-O2'],
+    CPPFLAGS=['-Wall', '-O2', '-std=c++17'],
     CPPPATH=['..'],
 	CXXFLAGS="-std=c++11",
 )
