@@ -5,9 +5,9 @@ import os
 env   = Environment(CPPPATH='..')
 debug = ARGUMENTS.get('debug', 'n')
 if debug == 'y' or debug == 'yes':
-    env.Append(CPPFLAGS = ['-Wall', '-g'])
+    env.Append(CPPFLAGS = ['-Wall', '-g', '-std=c++17'])
 else:
-    env.Append(CPPFLAGS = ['-Wall', '-O2'])
+    env.Append(CPPFLAGS = ['-Wall', '-O2', '-std=c++17'])
 
 if os.sys.platform != "win32":
     env.Append(CPPDEFINES = ['HAVE_UNISTD_H'])
