@@ -11,6 +11,8 @@
 #include <fcntl.h>
 #ifdef HAVE_UNISTD_H
 #include <unistd.h>
+#elif defined(_MSC_VER)
+#include <io.h>
 #endif // HAVE_UNISTD_H
 
 using namespace std;
