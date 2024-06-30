@@ -96,7 +96,7 @@ namespace dtl {
             init();
         }
         
-        ~Diff() {}
+				~Diff() = default;
         
         long long getEditDistance () const {
             return editDistance;

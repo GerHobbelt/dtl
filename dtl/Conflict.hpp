@@ -67,7 +67,7 @@ namespace dtl {
                                      inConflictBlock(false) {
         }
         
-        ~Conflict() {}
+        ~Conflict() = default;
         
         void handleElem(sesElemVec_iter* A, sesElemVec_iter* B, bool conflict) {
             if (conflict && !inConflictBlock) {

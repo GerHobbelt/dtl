@@ -49,7 +49,7 @@ namespace dtl {
     public :
         typedef vector< elem > elemVec;
         Sequence () {}
-        virtual ~Sequence () {}
+        virtual ~Sequence () = default;
         
         elemVec getSequence () const {
             return sequence;

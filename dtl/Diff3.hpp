@@ -71,7 +71,7 @@ namespace dtl {
                                     markConflicts(false), conflict(false),
                                     confMarkA(), confMarkB(), confMarkC() {}
         
-        ~Diff3 () {}
+        ~Diff3 () = default;
         
         bool isConflict () const {
             return conflict;

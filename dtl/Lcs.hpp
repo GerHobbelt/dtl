@@ -48,7 +48,7 @@ namespace dtl {
     {
     public :
         Lcs ()  {}
-        ~Lcs () = default
+				~Lcs () = default;
     };
 }
 

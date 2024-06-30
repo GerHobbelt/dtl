@@ -19,7 +19,7 @@ int main(int argc, const char **argv) {
         cerr << "Too few arguments." << endl;
         return -1;
     }
-    
+
     typedef char elem;
     typedef string sequence;
 
