@@ -9,7 +9,11 @@ using namespace std;
 
 using dtl::Diff3;
 
-int main(int argc, char *argv[]){
+#if defined(BUILD_MONOLITHIC)
+#define main    dtl_strdiff3_example_main
+#endif
+
+int main(int argc, const char **argv){
     
     if (isFewArgs(argc, 4)) {
         cerr << "Too few arguments." << endl;

@@ -11,7 +11,11 @@ using namespace std;
 
 using dtl::Diff;
 
-int main(int argc, char *argv[]){
+#if defined(BUILD_MONOLITHIC)
+#define main    dtl_fpatch_example_main
+#endif
+
+int main(int argc, const char **argv){
     
     if (isFewArgs(argc)) {
         cerr << "Too few arguments." << endl;

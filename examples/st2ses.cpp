@@ -10,7 +10,11 @@
 using namespace std;
 using namespace dtl;
 
-int main(int argc, char *argv[]){
+#if defined(BUILD_MONOLITHIC)
+#define main    dtl_st2ses_example_main
+#endif
+
+int main(int argc, const char **argv){
     
     if (isFewArgs(argc, 2)) {
         cerr << "Too few arguments." << endl;

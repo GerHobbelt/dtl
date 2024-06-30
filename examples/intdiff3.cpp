@@ -8,7 +8,11 @@ using namespace std;
 
 using dtl::Diff3;
 
-int main(int, char**) {
+#if defined(BUILD_MONOLITHIC)
+#define main    dtl_intdiff3_example_main
+#endif
+
+int main(void) {
     
     int a[10]      = {1, 2, 3, 4, 5, 6, 7, 3, 9, 10};
     int b[10]      = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};

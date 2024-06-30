@@ -81,7 +81,11 @@ static void unifiedDiff (string fp1, string fp2)
 }
 
 
-int main(int argc, char *argv[])
+#if defined(BUILD_MONOLITHIC)
+#define main    dtl_unidiff_example_main
+#endif
+
+int main(int argc, const char **argv)
 {
     if (isFewArgs(argc)) {
         cerr << "Too few arguments." << endl;

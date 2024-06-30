@@ -22,7 +22,6 @@ using dtl::Diff;
 typedef unsigned char  elem;
 typedef vector< elem > sequence;
 
-static int create_byte_seq(const char *fs, sequence& seq);
 static int create_byte_seq(const char *fs, sequence& seq)
 {
     int  fd;
@@ -46,7 +45,11 @@ static int create_byte_seq(const char *fs, sequence& seq)
     return 0;
 }
 
-int main(int argc, char *argv[])
+#if defined(BUILD_MONOLITHIC)
+#define main    dtl_bdiff_example_main
+#endif
+
+int main(int argc, const char **argv)
 {
     
     if (isFewArgs(argc)) {
