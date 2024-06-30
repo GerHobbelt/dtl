@@ -1,6 +1,15 @@
 #ifndef DTL_COMPARATORS
 #define DTL_COMPARATORS
 
+#if !defined(_MSC_VER)
+#include <strings.h>
+#else
+#include <string.h>
+#ifndef strncasecmp
+#define strncasecmp			_strnicmp
+#endif
+#endif
+
 class CaseInsensitive: public dtl::Compare<char> {
 public:
     virtual bool impl(const char& a, const char& b) const {
